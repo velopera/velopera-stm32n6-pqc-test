@@ -1,0 +1,14 @@
+build
+mx.scratch
+
+#editor
+!.settings
+.settings/
+*~
+.vscode
+
+
+*.o
+*.a
+*.so
+*.elf

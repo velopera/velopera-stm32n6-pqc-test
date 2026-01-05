@@ -1,0 +1,1 @@
+cmd='/opt/st/stm32cubeide_2.0.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cmake.linux64_1.1.0.202409170845/tools/bin/cmake;-DCMAKE_EXPORT_COMPILE_COMMANDS=ON;-DCMAKE_TOOLCHAIN_FILE=/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/gcc-arm-none-eabi.cmake;-DCMAKE_BUILD_TYPE=;-GUnix Makefiles;-S;<SOURCE_DIR><SOURCE_SUBDIR>;-B;<BINARY_DIR>'

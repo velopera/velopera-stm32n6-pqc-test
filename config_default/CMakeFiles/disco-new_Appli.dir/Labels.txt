@@ -1,0 +1,13 @@
+# Target labels
+ disco-new_Appli
+# Source files and their labels
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/CMakeFiles/disco-new_Appli
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/CMakeFiles/disco-new_Appli.rule
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/CMakeFiles/disco-new_Appli-complete.rule
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/Appli/src/disco-new_Appli-stamp/disco-new_Appli-build.rule
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/Appli/src/disco-new_Appli-stamp/disco-new_Appli-configure.rule
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/Appli/src/disco-new_Appli-stamp/disco-new_Appli-download.rule
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/Appli/src/disco-new_Appli-stamp/disco-new_Appli-install.rule
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/Appli/src/disco-new_Appli-stamp/disco-new_Appli-mkdir.rule
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/Appli/src/disco-new_Appli-stamp/disco-new_Appli-patch.rule
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/Appli/src/disco-new_Appli-stamp/disco-new_Appli-update.rule

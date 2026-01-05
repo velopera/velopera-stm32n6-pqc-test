@@ -1,0 +1,17 @@
+[submodule "Appli/libs/mupq"]
+	path = Appli/libs/mupq
+	url = https://github.com/mupq/mupq.git
+[submodule "Appli/libs/pqm4"]
+	path = Appli/libs/pqm4
+	url = https://github.com/mupq/pqm4.git
+[submodule "Appli/libs/pqclean"]
+	path = Appli/libs/pqclean
+	url = https://github.com/pqclean/pqclean
+[submodule "Appli/libs/pq-edhoc"]
+	path = Appli/libs/pq-edhoc
+	url = https://github.com/LPFraile/PQ-EDHOC.git
+	branch = PQ-uEDHOC
+
+[submodule "Appli/libs/zcbor"]
+	path = Appli/libs/zcbor
+	url = https://github.com/NordicSemiconductor/zcbor.git

@@ -1,0 +1,4 @@
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/CMakeFiles/disco-new_FSBL.dir
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/CMakeFiles/disco-new_Appli.dir
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/CMakeFiles/edit_cache.dir
+/home/simon/STM32CubeIDE/workspace_2.0.0/disco-new/config_default/CMakeFiles/rebuild_cache.dir
