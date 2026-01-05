@@ -1,17 +1,28 @@
 include_directories( 
     ${CMAKE_CURRENT_SOURCE_DIR}/pqclean/common
 	${CMAKE_CURRENT_SOURCE_DIR}/mupq/common
-	${CMAKE_CURRENT_SOURCE_DIR}/pqm4/common 
 	${CMAKE_CURRENT_SOURCE_DIR}/pq-edhoc/inc 
 	${CMAKE_CURRENT_SOURCE_DIR}/zcbor/include 
 
+    # crypto engines:
+	${CMAKE_CURRENT_SOURCE_DIR}/pqm4/common 
     ${CMAKE_CURRENT_SOURCE_DIR}/pqm4/crypto_kem/ml-kem-512/m4fstack/
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tinycrypt/lib/include/
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/compact25519/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/compact25519/src/c25519
+
     )
 
 add_definitions(
     -DHAWK_LEVEL_1
     -DPQM4
+    -DTINYCRYPT
+    -DCOMPACT25519
     )
+
+#todo: compile tinycrypt etc.
 
 # sources per crypto algo variant
 set(PQM4_ML_KEM_512_SRC 

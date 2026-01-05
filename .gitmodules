@@ -3,7 +3,7 @@
 	url = https://github.com/mupq/mupq.git
 [submodule "Appli/libs/pqm4"]
 	path = Appli/libs/pqm4
-	url = https://github.com/mupq/pqm4.git
+	url = https://github.com/LPFraile/pqm4.git
 [submodule "Appli/libs/pqclean"]
 	path = Appli/libs/pqclean
 	url = https://github.com/pqclean/pqclean
@@ -15,3 +15,9 @@
 [submodule "Appli/libs/zcbor"]
 	path = Appli/libs/zcbor
 	url = https://github.com/NordicSemiconductor/zcbor.git
+[submodule "Appli/libs/tinycrypt"]
+	path = Appli/libs/tinycrypt
+	url = https://github.com/intel/tinycrypt.git
+[submodule "Appli/libs/compact25519"]
+	path = Appli/libs/compact25519
+	url = https://github.com/DavyLandman/compact25519.git
