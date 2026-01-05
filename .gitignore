@@ -2,6 +2,7 @@ build
 mx.scratch
 
 #editor
+.clangd
 !.settings
 .settings/
 *~

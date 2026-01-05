@@ -4,8 +4,36 @@ include_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}/pqm4/common 
 	${CMAKE_CURRENT_SOURCE_DIR}/pq-edhoc/inc 
 	${CMAKE_CURRENT_SOURCE_DIR}/zcbor/include 
-	)
 
+    ${CMAKE_CURRENT_SOURCE_DIR}/pqm4/crypto_kem/ml-kem-512/m4fstack/
+    )
+
+add_definitions(
+    -DHAWK_LEVEL_1
+    -DPQM4
+    )
+
+# sources per crypto algo variant
+set(PQM4_ML_KEM_512_SRC 
+    pqm4/crypto_kem/ml-kem-512/m4fstack/cmov_int16.S
+    pqm4/crypto_kem/ml-kem-512/m4fstack/fastaddsub.S
+    pqm4/crypto_kem/ml-kem-512/m4fstack/fastbasemul.S
+    pqm4/crypto_kem/ml-kem-512/m4fstack/fastinvntt.S
+    pqm4/crypto_kem/ml-kem-512/m4fstack/fastntt.S
+    pqm4/crypto_kem/ml-kem-512/m4fstack/matacc_asm.S
+    pqm4/crypto_kem/ml-kem-512/m4fstack/poly_asm.S
+    pqm4/crypto_kem/ml-kem-512/m4fstack/reduce.S
+
+    pqm4/crypto_kem/ml-kem-512/m4fstack/cbd.c
+    pqm4/crypto_kem/ml-kem-512/m4fstack/indcpa.c
+    pqm4/crypto_kem/ml-kem-512/m4fstack/kem.c
+    pqm4/crypto_kem/ml-kem-512/m4fstack/matacc.c
+    pqm4/crypto_kem/ml-kem-512/m4fstack/ntt.c
+    pqm4/crypto_kem/ml-kem-512/m4fstack/poly.c
+    pqm4/crypto_kem/ml-kem-512/m4fstack/polyvec.c
+    pqm4/crypto_kem/ml-kem-512/m4fstack/symmetric-fips202.c
+    pqm4/crypto_kem/ml-kem-512/m4fstack/verify.c
+    )
 
 add_library(pqm4 STATIC 
 	pqm4/common/aes-encrypt.S  
@@ -22,6 +50,8 @@ add_library(pqm4 STATIC
 	pqm4/common/randombytes.c
 #	pqm4/common/test.c
 #	pqm4/common/testfast.c
+
+    ${PQM4_ML_KEM_512_SRC}
     )
 
 add_library(pq-edhoc STATIC 
