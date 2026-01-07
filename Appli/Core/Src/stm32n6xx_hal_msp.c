@@ -345,65 +345,78 @@ void HAL_GPU2D_MspDeInit(GPU2D_HandleTypeDef* hgpu2d)
 }
 
 /**
-  * @brief HCD MSP Initialization
+  * @brief UART MSP Initialization
   * This function configures the hardware resources used in this example
-  * @param hhcd: HCD handle pointer
+  * @param huart: UART handle pointer
   * @retval None
   */
-void HAL_HCD_MspInit(HCD_HandleTypeDef* hhcd)
+void HAL_UART_MspInit(UART_HandleTypeDef* huart)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
-  if(hhcd->Instance==USB2_OTG_HS)
+  if(huart->Instance==USART1)
   {
-    /* USER CODE BEGIN USB2_OTG_HS_MspInit 0 */
+    /* USER CODE BEGIN USART1_MspInit 0 */
 
-    /* USER CODE END USB2_OTG_HS_MspInit 0 */
+    /* USER CODE END USART1_MspInit 0 */
 
   /** Initializes the peripherals clock
   */
-    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USBOTGHS2;
-    PeriphClkInitStruct.UsbPhy2ClockSelection = RCC_USBPHY2CLKSOURCE_HSE_DIRECT;
-    PeriphClkInitStruct.UsbOtgHs2ClockSelection = RCC_USBOTGHS2CLKSOURCE_OTGPHY2;
+    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART1;
+    PeriphClkInitStruct.Usart1ClockSelection = RCC_USART1CLKSOURCE_CLKP;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
     {
       Error_Handler();
     }
 
-    /* Enable VDDUSB */
-    HAL_PWREx_EnableVddUSB();
     /* Peripheral clock enable */
-    __HAL_RCC_USB2_OTG_HS_CLK_ENABLE();
-    __HAL_RCC_USB2_OTG_HS_PHY_CLK_ENABLE();
-    /* USER CODE BEGIN USB2_OTG_HS_MspInit 1 */
+    __HAL_RCC_USART1_CLK_ENABLE();
 
-    /* USER CODE END USB2_OTG_HS_MspInit 1 */
+    __HAL_RCC_GPIOE_CLK_ENABLE();
+    /**USART1 GPIO Configuration
+    PE5     ------> USART1_TX
+    PE6     ------> USART1_RX
+    */
+    GPIO_InitStruct.Pin = VCP_TX_Pin|VCP_RX_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF7_USART1;
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+    /* USER CODE BEGIN USART1_MspInit 1 */
+
+    /* USER CODE END USART1_MspInit 1 */
 
   }
 
 }
 
 /**
-  * @brief HCD MSP De-Initialization
+  * @brief UART MSP De-Initialization
   * This function freeze the hardware resources used in this example
-  * @param hhcd: HCD handle pointer
+  * @param huart: UART handle pointer
   * @retval None
   */
-void HAL_HCD_MspDeInit(HCD_HandleTypeDef* hhcd)
+void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 {
-  if(hhcd->Instance==USB2_OTG_HS)
+  if(huart->Instance==USART1)
   {
-    /* USER CODE BEGIN USB2_OTG_HS_MspDeInit 0 */
+    /* USER CODE BEGIN USART1_MspDeInit 0 */
 
-    /* USER CODE END USB2_OTG_HS_MspDeInit 0 */
+    /* USER CODE END USART1_MspDeInit 0 */
     /* Peripheral clock disable */
-    __HAL_RCC_USB2_OTG_HS_CLK_DISABLE();
-    __HAL_RCC_USB2_OTG_HS_PHY_CLK_DISABLE();
+    __HAL_RCC_USART1_CLK_DISABLE();
 
-    /* Disable VDDUSB */
-      HAL_PWREx_DisableVddUSB();
-    /* USER CODE BEGIN USB2_OTG_HS_MspDeInit 1 */
+    /**USART1 GPIO Configuration
+    PE5     ------> USART1_TX
+    PE6     ------> USART1_RX
+    */
+    HAL_GPIO_DeInit(GPIOE, VCP_TX_Pin|VCP_RX_Pin);
 
-    /* USER CODE END USB2_OTG_HS_MspDeInit 1 */
+    /* USER CODE BEGIN USART1_MspDeInit 1 */
+
+    /* USER CODE END USART1_MspDeInit 1 */
   }
 
 }

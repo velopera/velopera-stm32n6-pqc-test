@@ -79,8 +79,12 @@ void Error_Handler(void);
 #define OSC_IN_GPIO_Port GPIOH
 #define OSC_OUT_Pin GPIO_PIN_1
 #define OSC_OUT_GPIO_Port GPIOH
+#define VCP_TX_Pin GPIO_PIN_5
+#define VCP_TX_GPIO_Port GPIOE
 #define NRST_CAM_Pin GPIO_PIN_8
 #define NRST_CAM_GPIO_Port GPIOC
+#define VCP_RX_Pin GPIO_PIN_6
+#define VCP_RX_GPIO_Port GPIOE
 #define PWR_USB2_EN_Pin GPIO_PIN_9
 #define PWR_USB2_EN_GPIO_Port GPIOB
 #define ETH_MDINT_Pin GPIO_PIN_3
